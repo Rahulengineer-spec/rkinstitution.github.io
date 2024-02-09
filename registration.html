@@ -1,121 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-        .container {
-            text-align: center;
-        }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
 
-        .neon-form {
-            background-color: #111;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
 
-        .neon-form h1 {
-            color: #fff;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
 
-        label {
-            display: block;
-            color: #fff;
-            margin-bottom: 5px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            background-color: #333;
-            color: #fff;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #0ff;
-            color: #111;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #0cc;
-        }
-    </style>
-    <title>Neon Registration Form</title>
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <form class="neon-form">
-            <h1>Registration Form</h1>
+  <form id="registrationForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
 
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" required>
-            </div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
 
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" required>
-            </div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" required>
-            </div>
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
 
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+    <label for="class">Class:</label>
+    <input type="text" id="class" name="class" required>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+    <label for="course">Course:</label>
+    <input type="text" id="course" name="course" required>
 
-            <div class="form-group">
-                <label for="course">Course</label>
-                <input type="text" id="course" name="course" required>
-            </div>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{10}" placeholder="Enter 10-digit phone number">
 
-            <div class="form-group">
-                <label for="class">Class</label>
-                <input type="text" id="class" name="class" required>
-            </div>
+    <button type="button" onclick="register()">Register</button>
+  </form>
 
-            <button type="submit">Register</button>
-        </form>
-    </div>
+  <script>
+    function register() {
+      // You can add your registration logic here
+      alert('Registration successful!');
+    }
+  </script>
 
 </body>
 </html>
