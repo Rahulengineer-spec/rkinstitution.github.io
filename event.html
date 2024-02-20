@@ -14,6 +14,7 @@
             background-color:#230441;
             background-image:
         }
+        /* Add a valid property value here */
 
         #banner {
             width: 100%;
@@ -281,25 +282,20 @@
 
       <script src="./assets/js/script.js" defer></script>
     <script>
-      var id = null;
+    const movingText = document.getElementById("movingText");
+    let textWidth = movingText.offsetWidth;
+    let leftPosition = 0;
 
-function myMove() {
-    var elem = document.getElementById("banner");
-    var pos = 0;
-
-    clearInterval(id);
-    id = setInterval(frame, 10);
-
-    function frame() {
-        if (pos == 350) {
-            clearInterval(id);
-        } else {
-            pos++;
-            elem.style.top = pos + 'px';
-            elem.style.left = pos + 'px';
-        }
-    }
+    function moveText() {
+    if (leftPosition < textWidth) {
+    movingText.style.transform = `translateX(${leftPosition}px)`;
+    leftPosition++;
+  } else {
+    leftPosition = 0;
+  }
 }
+
+setInterval(moveText, 20);
 
     </script>
 
