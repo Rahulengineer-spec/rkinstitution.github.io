@@ -284,14 +284,14 @@
     <script>
     const movingText = document.getElementById("banner");
     let textWidth = movingText.offsetWidth;
-    let leftPosition = 0;
+    let rightPosition = 0;
 
     function moveText() {
-    if (leftPosition < textWidth) {
-    movingText.style.transform = `translateX(${leftPosition}px)`;
-    leftPosition++;
+    if (rightPosition < textWidth) {
+    movingText.style.transform = `translateX(${rightPosition}px)`;
+    rightPosition++;
   } else {
-    leftPosition = 0;
+    rightPosition = 0;
   }
 }
 
